@@ -7,7 +7,7 @@
 
 ## What is Rust?
 
----
+***
 
 ### A systems programming language focus on:
 
@@ -27,7 +27,7 @@
   $ curl https://sh.rustup.rs -sSf | sh
 ```
 
----
+***
 
 ```
   $ rustc --version
@@ -38,19 +38,19 @@
 
 ## IDEs
 
----
+***
 
 ## Atom
 
 _[atom.io](https://atom.io)_
 
----
+***
 
 ## SolidOak
 
 _[sekao.net/solidoak](https://sekao.net/solidoak)_
 
----
+***
 
 ## Ride
 
@@ -60,7 +60,7 @@ _[github.com/madeso/ride](https://github.com/madeso/ride)_
 
 ## Hello world!
 
----
+***
 
 ## Print text
 
@@ -68,7 +68,7 @@ _[github.com/madeso/ride](https://github.com/madeso/ride)_
   println!("string {} literal", expressions);
 ```
 
----
+***
 
 ```
   // hello.rs
@@ -77,7 +77,7 @@ _[github.com/madeso/ride](https://github.com/madeso/ride)_
   }
 ```
 
----
+***
 
 ## Comments
 
@@ -85,7 +85,7 @@ _[github.com/madeso/ride](https://github.com/madeso/ride)_
   // This is a comment
 ```
 
----
+***
 
 ## Running
 
@@ -105,7 +105,7 @@ _[github.com/madeso/ride](https://github.com/madeso/ride)_
 
 ## What is Cargo?
 
----
+***
 
 ### Cargo is Rust’s build system and package manager.
 
@@ -117,13 +117,13 @@ _[github.com/madeso/ride](https://github.com/madeso/ride)_
   $ cargo new hello_world --bin
 ```
 
----
+***
 
 ```
   ~/hello_world$ ls -R 
 ```
 
----
+***
 
 ```
   .:
@@ -133,7 +133,7 @@ _[github.com/madeso/ride](https://github.com/madeso/ride)_
   main.rs
 ```
 
----
+***
 
 ## Manifest
 
@@ -144,7 +144,7 @@ _[github.com/madeso/ride](https://github.com/madeso/ride)_
   authors = ["you@example.com"] # author
 ```
 
----
+***
 
 ## Build & Run
 
@@ -163,7 +163,7 @@ _[rocket.rs](https://rocket.rs)_
 
 ## What is Rocket?
 
----
+***
 
 ### A web framework for Rust
 
@@ -171,7 +171,7 @@ _[rocket.rs](https://rocket.rs)_
 
 ## Requirements
 
----
+***
 
 ### A nightly version of Rust
 
@@ -179,14 +179,14 @@ _[rocket.rs](https://rocket.rs)_
   $ rustup install nightly
 ```
 
----
+***
 
 ```
   $ rustup run nightly rustc --version
   rustc 1.17.0-nightly (c49d10207 2017-02-07)
 ```
 
----
+***
 
 ```
   $ rustup default nightly
@@ -196,7 +196,7 @@ _[rocket.rs](https://rocket.rs)_
 
 ## Hello, world!
 
----
+***
 
 ### Running examples
 
@@ -206,7 +206,7 @@ _[rocket.rs](https://rocket.rs)_
   $ cargo run
 ```
 
----
+***
 
 ### Manifest
 
@@ -224,7 +224,7 @@ _[rocket.rs](https://rocket.rs)_
   rocket = { path = "../../lib", features = ["testing"] }
 ```
 
----
+***
 
 ### main.rs
 
@@ -255,7 +255,7 @@ _[rocket.rs](https://rocket.rs)_
   $ cd hello-rocket
 ```
 
----
+***
 
 ### Modify Cargo.toml
 
@@ -270,7 +270,7 @@ _[rocket.rs](https://rocket.rs)_
   rocket_codegen = "0.2.0"
 ```
 
----
+***
 
 ### Modify main.rs
 
