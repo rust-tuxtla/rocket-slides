@@ -1,6 +1,5 @@
-![](img/rust-logo.png)
+![](img/rocket.png)
 <!-- .element: style="margin-top: -5%;" -->
-## Introduction
 
 #### [Mario Garcia](http://mariog.xyz) · [@mariogmd](https://twitter.com/mariogmd)
 
@@ -8,7 +7,7 @@
 
 ## What is Rust?
 
-***
+---
 
 ### A systems programming language focus on:
 
@@ -28,30 +27,30 @@
   $ curl https://sh.rustup.rs -sSf | sh
 ```
 
-***
+---
 
 ```
   $ rustc --version
-  rustc 1.14.0 (e8a012324 2016-12-16)
+  rustc 1.15.0 (10893a9a3 2017-01-19)
 ```
 
 ---
 
 ## IDEs
 
-***
+---
 
 ## Atom
 
 _[atom.io](https://atom.io)_
 
-***
+---
 
 ## SolidOak
 
 _[sekao.net/solidoak](https://sekao.net/solidoak)_
 
-***
+---
 
 ## Ride
 
@@ -61,7 +60,7 @@ _[github.com/madeso/ride](https://github.com/madeso/ride)_
 
 ## Hello world!
 
-***
+---
 
 ## Print text
 
@@ -69,7 +68,7 @@ _[github.com/madeso/ride](https://github.com/madeso/ride)_
   println!("string {} literal", expressions);
 ```
 
-***
+---
 
 ```
   // hello.rs
@@ -78,7 +77,7 @@ _[github.com/madeso/ride](https://github.com/madeso/ride)_
   }
 ```
 
-***
+---
 
 ## Comments
 
@@ -98,188 +97,6 @@ _[github.com/madeso/ride](https://github.com/madeso/ride)_
 
 ---
 
-## Rust Sintax
-
----
-
-## variables
-
-```
-  let name = expression;
-```
-
-***
-
-## Example
-
-```
-  fn main () {
-      let a = 7;
-      let b = 8;
-      println!("The sum is: {}", a+b);
-  }
-```
-
-***
-
-## Mutability
-
-```
-  let mut nombre = expression;
-```
-
----
-
-## Primitive Types
-
----
-
-## Numeric Types
-
-- i8, i16, i32, i64
-- u8, u16, u32, u64<!-- .element: class="fragment" -->
-- f32, f64<!-- .element: class="fragment" -->
-- isize, usize<!-- .element: class="fragment" -->
-
-***
-
-```
-  let x = 42; // x has type i32
-  let y = 1.0; // y has type f64
-```
-
----
-
-## String
-
-```
-  let x = 'x';
-```
-
----
-
-## Boolean
-
-```
-  let x = true;
-  let y: bool = true;
-```
-
----
-
-## Decision making
-
-```
-  if condicion {
-      expressions;
-  }
-  else {
-      expressions;
-  }
-```
-
-***
-
-## Example
-
-```
-  fn main() {
-      let a = 8;
-      let b = 12;
-      if a > b {
-          println!("{} > {}", a, b);
-      }
-      else {
-          println!("{} > {}", b, a);
-      }
-  }
-```
-
----
-
-## Arrays
-
-```
-  let a = [1, 2, 3]; // a: [i32; 3]
-  let mut m = [1, 2, 3]; // m: [i32; 3]
-```
-
----
-
-## Loops
-
-***
-
-```
-  for i in x..n {
-      expressions;
-  }
-```
-
-***
-
-```
-  while condition {
-      expressions;
-  }
-```
-
-***
-
-## Examples
-
-***
-
-```
-  fn main () {
-      let a = [1, 2, 3, 4, 5];
-      for i in 0..5 {
-          println!("{}", a[i]);
-      }
-  }
-```
-
-***
-
-```
-  fn main () {
-      let a = [1, 2, 3, 4, 5];
-      let mut i = 0;
-      while i < 5 {
-          println!("{}", a[i]);
-          i = i +1;
-      }
-  }
-```
-
----
-
-## functions
-
-```
-  fn name(arg: Type) -> ReturnType {
-      statements;
-  }
-```
-
----
-
-## Example
-
-```
-  fn main () {
-      let a = 9;
-      let b = 15;
-      println("La suma es: {}", suma(a, b));
-  }
-  fn sum(a: i32, b: i32) -> i32 {
-      let c = a + b;
-      return c;
-  }
-```
-
----
-
 ![](img/cargo-logo.png)
 
 ## Cargo
@@ -288,7 +105,7 @@ _[github.com/madeso/ride](https://github.com/madeso/ride)_
 
 ## What is Cargo?
 
-***
+---
 
 ### Cargo is Rust’s build system and package manager.
 
@@ -300,13 +117,13 @@ _[github.com/madeso/ride](https://github.com/madeso/ride)_
   $ cargo new hello_world --bin
 ```
 
-***
+---
 
 ```
   ~/hello_world$ ls -R 
 ```
 
-***
+---
 
 ```
   .:
@@ -338,71 +155,146 @@ _[github.com/madeso/ride](https://github.com/madeso/ride)_
 
 ---
 
-## Web frameworks
-
-***
-
-## Iron
-
-_[ironframework.io](https://ironframework.io)_
-
-***
-
 ## Rocket
 
 _[rocket.rs](https://rocket.rs)_
 
 ---
 
-## Projects
+## What is Rocket?
 
 ---
 
-## Servo
-
-_[servo.org](https://servo.org)_
-
-***
-
-## What is Servo?
-
-***
-
-#### Servo is a modern, performant browser engine designed to be appropriate for applications including embedded use.
+### A web framework for Rust
 
 ---
 
-## intermezzOS
-
-_[intermezzos.github.io](https://intermezzoss.github.io)_
-
-***
-
-## What is intermezzOS?
-
-***
-
-#### intermezzOS is a teaching operating system, specifically focused on introducing systems programming concepts to experienced developers from other areas of programming.
+## Requirements
 
 ---
 
-## Meetups
+### A nightly version of Rust
 
-***
+```
+  $ rustup install nightly
+```
 
-### Rust MX
+---
 
-_[meetup.com/es/Rust-MX](https//meetup.com/es/Rust-MX)_
+```
+  $ rustup run nightly rustc --version
+  rustc 1.17.0-nightly (c49d10207 2017-02-07)
+```
 
-___
+---
 
-[@rustlang_mx](https://twitter.com/rustlang_mx)
+```
+  $ rustup default nightly
+```
+
+---
+
+## Hello, world!
+
+---
+
+### Running examples
+
+```
+  $ git clone https://github.com/SergioBenitez/rocket
+  $ cd rocket/examples/hello_world
+  $ cargo run
+```
+
+---
+
+### Manifest
+
+```
+  [package]
+  name = "hello_world"
+  version = "0.0.1"
+  workspace = "../../"
+
+  [dependencies]
+  rocket = { path = "../../lib" }
+  rocket_codegen = { path = "../../codegen" }
+
+  [dev-dependencies]
+  rocket = { path = "../../lib", features = ["testing"] }
+```
+
+---
+
+### main.rs
+
+```
+  #![feature(plugin)]
+  #![plugin(rocket_codegen)]
+
+  extern crate rocket;
+
+  #[cfg(test)] mod tests;
+
+  #[get("/")]
+  fn hello() -> &'static str {
+      "Hello, world!"
+  }
+
+  fn main() {
+      rocket::ignite().mount("/", routes![hello]).launch();
+  }
+```
+
+---
+
+### Cargo project
+
+```
+  $ cargo new hello-rocket --bin
+  $ cd hello-rocket
+```
+
+---
+
+### Modify Cargo.toml
+
+```
+  [package]
+  name = "hello_rocket"
+  version = "0.1.0"
+  authors = ["mattdark@mozilla-mexico.org"]
+  
+  [dependencies]
+  rocket = "0.2.0"
+  rocket_codegen = "0.2.0"
+```
+
+---
+
+### Modify main.rs
+
+```
+  #![feature(plugin)]
+  #![plugin(rocket_codegen)]
+
+  extern crate rocket;
+
+  #[get("/")]
+  fn index() -> &'static str {
+      "Hello, world!"
+  }
+
+  fn main() {
+      rocket::ignite().mount("/", routes![index]).launch();
+  }
+```
 
 ---
 
 ## Learn More
 
-_[rust-lang.org](https//rust-lang.org)_
+_[rocket.rs](https//rocket.rs)_
 
 ___
 
