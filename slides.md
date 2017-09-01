@@ -290,6 +290,6 @@ ___
 
 [@mariogmd](https://twitter.com/mariogmd)
 
-[fb.com/iscmariog](https://facebook.com/iscmariog)
+[fb.com/iscmariog](https://fb.com/iscmariog)
 
 mattdark@mozilla-mexico.org
