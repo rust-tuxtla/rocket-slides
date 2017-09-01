@@ -1,157 +1,7 @@
 ![](img/rocket.png)
 <!-- .element: style="margin-top: -5%;" -->
 
-#### [Mario Garcia](http://mariog.xyz) · [@mariogmd](https://twitter.com/mariogmd)
-
----
-
-## What is Rust?
-
-***
-
-### A systems programming language focus on:
-
-<br>
-
-<span class="fragment">safety</span><span class="fragment">, speed</span><span class="fragment">, and concurrency.</span>
-
-<!-- .element: class="fragment" -->
-
----
-
-## Installing Rust
-
-### Linux or Mac:
-
-```
-  $ curl https://sh.rustup.rs -sSf | sh
-```
-
-***
-
-```
-  $ rustc --version
-  rustc 1.15.0 (10893a9a3 2017-01-19)
-```
-
----
-
-## IDEs
-
-***
-
-## Atom
-
-_[atom.io](https://atom.io)_
-
-***
-
-## SolidOak
-
-_[sekao.net/solidoak](https://sekao.net/solidoak)_
-
-***
-
-## Ride
-
-_[github.com/madeso/ride](https://github.com/madeso/ride)_
-
----
-
-## Hello world!
-
-***
-
-## Print text
-
-```
-  println!("string {} literal", expressions);
-```
-
-***
-
-```
-  // hello.rs
-  fn main() {
-      println!("Hello, world!");
-  }
-```
-
-***
-
-## Comments
-
-```
-  // This is a comment
-```
-
-***
-
-## Running
-
-```
-  $ rustc hello.rs
-  $ ./hello
-  Hello, world!
-```
-
----
-
-![](img/cargo-logo.png)
-
-## Cargo
-
----
-
-## What is Cargo?
-
-***
-
-### Cargo is Rust’s build system and package manager.
-
----
-
-## New project with Cargo
-
-```
-  $ cargo new hello_world --bin
-```
-
-***
-
-```
-  ~/hello_world$ ls -R 
-```
-
-***
-
-```
-  .:
-  Cargo.toml src
-
-  ./src:
-  main.rs
-```
-
-***
-
-## Manifest
-
-```
-  [package]
-  name = "hello_world" # the name of the package
-  version = "0.1.0"    # the current version
-  authors = ["you@example.com"] # author
-```
-
-***
-
-## Build & Run
-
-```
-  $ cargo build
-  $ cargo run
-```
+#### [Mario Garcia](http://mattdark.github.io) · [@mariogmd](https://twitter.com/mariogmd)
 
 ---
 
@@ -175,28 +25,37 @@ _[rocket.rs](https://rocket.rs)_
 
 ### A nightly version of Rust
 
+#### Installing Rust
 ```
   $ rustup install nightly
 ```
 
 ***
 
+#### Check version installed
+
 ```
   $ rustup run nightly rustc --version
-  rustc 1.17.0-nightly (c49d10207 2017-02-07)
+  rustc 1.21.0-nightly (7eeac1b81 2017-08-30)
 ```
 
 ***
+
+#### Set default
 
 ```
   $ rustup default nightly
 ```
 
----
-
-## Hello, world!
-
 ***
+
+#### Set default for project
+
+```
+  $ rustup override set nightly
+```
+
+---
 
 ### Running examples
 
@@ -206,22 +65,32 @@ _[rocket.rs](https://rocket.rs)_
   $ cargo run
 ```
 
+---
+
+### Hello, world!
+
+***
+
+### Create project
+
+```
+  $ cargo new hello_rocket --bin
+  $ cd hello_rocket
+```
+
 ***
 
 ### Manifest
 
 ```
   [package]
-  name = "hello_world"
-  version = "0.0.1"
-  workspace = "../../"
+  name = "hello_rocket"
+  version = "0.1.0"
+  authors = "[mattdark]"
 
   [dependencies]
-  rocket = { path = "../../lib" }
-  rocket_codegen = { path = "../../codegen" }
-
-  [dev-dependencies]
-  rocket = { path = "../../lib", features = ["testing"] }
+  rocket = "0.3.2"
+  rocket_codegen = "0.3.2"
 ```
 
 ***
@@ -237,50 +106,6 @@ _[rocket.rs](https://rocket.rs)_
   #[cfg(test)] mod tests;
 
   #[get("/")]
-  fn hello() -> &'static str {
-      "Hello, world!"
-  }
-
-  fn main() {
-      rocket::ignite().mount("/", routes![hello]).launch();
-  }
-```
-
----
-
-### Cargo project
-
-```
-  $ cargo new hello-rocket --bin
-  $ cd hello-rocket
-```
-
-***
-
-### Modify Cargo.toml
-
-```
-  [package]
-  name = "hello_rocket"
-  version = "0.1.0"
-  authors = ["mattdark@mozilla-mexico.org"]
-  
-  [dependencies]
-  rocket = "0.2.0"
-  rocket_codegen = "0.2.0"
-```
-
-***
-
-### Modify main.rs
-
-```
-  #![feature(plugin)]
-  #![plugin(rocket_codegen)]
-
-  extern crate rocket;
-
-  #[get("/")]
   fn index() -> &'static str {
       "Hello, world!"
   }
@@ -292,6 +117,171 @@ _[rocket.rs](https://rocket.rs)_
 
 ---
 
+### Running
+
+```
+  $ cargo build
+  $ cargo run
+```
+
+***
+
+```
+🔧  Configured for development.
+    => address: localhost
+    => port: 8000
+    => log: normal
+    => workers: 4
+    => secret key: generated
+    => limits: forms = 32KiB
+    => tls: disabled
+🛰  Mounting '/':
+    => GET /
+🚀  Rocket has launched from http://localhost:8000
+```
+
+***
+
+### Running in Firefox
+
+```
+  http://localhost:8000
+  Hello, world!
+```
+
+---
+
+## Routing
+
+***
+
+```
+  #[get("/world")]  // <- route attribute
+  fn world() -> &'static str {  // <- request handler
+    "Hello, world!"
+  }
+```
+
+---
+
+## Mounting
+
+***
+
+```
+  rocket::ignite().mount("/hello", routes![world]);
+```
+
+---
+
+## main.rs
+
+```
+  #![feature(plugin)]
+  #![plugin(rocket_codegen)]
+
+  extern crate rocket;
+
+  #[get("/world")]
+  fn world() -> &'static str {
+    "Hello, world!"
+  }
+
+  fn main() {
+    rocket::ignite().mount("/hello", routes![world]).launch();
+  }
+```
+
+---
+
+## Running
+
+```
+  $ cargo run
+```
+
+***
+
+```
+🔧  Configured for development.
+    => address: localhost
+    => port: 8000
+    => log: normal
+    => workers: 4
+    => secret key: generated
+    => limits: forms = 32KiB
+    => tls: disabled
+🛰  Mounting '/hello':
+    => GET /hello/world
+🚀  Rocket has launched from http://localhost:8000
+```
+
+***
+
+### Running in Firefox
+
+```
+  http://localhost:8000/hello/world
+  Hello, world!
+```
+
+---
+
+## Requests
+
+***
+
+```
+  #![feature(plugin)]
+  #![plugin(rocket_codegen)]
+
+  extern crate rocket;
+
+  #[get("/hello/<name>")]
+  fn hello(name: String) -> String {
+    format!("Hello, {}!", name.as_str())
+  }
+
+  fn main() {
+    rocket::ignite().mount("/", routes![hello]).launch();
+  }
+```
+
+***
+
+### Running
+
+```
+  $ cargo run
+```
+
+***
+
+```
+🔧  Configured for development.
+    => address: localhost
+    => port: 8000
+    => log: normal
+    => workers: 4
+    => secret key: generated
+    => limits: forms = 32KiB
+    => tls: disabled
+🛰  Mounting '/':
+    => GET /hello/<name>
+🚀  Rocket has launched from http://localhost:8000
+```
+
+***
+
+#### Running in Firefox
+
+```
+  http://localhost:8000/hello/Mario
+  Hello, Mario!
+```
+
+---
+
 ## Learn More
 
 _[rocket.rs](https//rocket.rs)_
@@ -299,5 +289,7 @@ _[rocket.rs](https//rocket.rs)_
 ___
 
 [@mariogmd](https://twitter.com/mariogmd)
+
+[fb.com/iscmariog](https://facebook.com/iscmariog)
 
 mattdark@mozilla-mexico.org
